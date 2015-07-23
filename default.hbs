@@ -15,13 +15,21 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
+    <link rel="stylesheet" href="{{asset "css/style.css"}}"/>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body {{#if @blog.cover}} style="background-image: url({{@blog.cover}}); -webkit-background-size:cover;"{{/if}}>
-{{{body}}}
+<body>
+
+
+    {{{body}}}
+
+
 
 {{ghost_footer}}
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{asset "js/main.js"}}"></script>
 </body>
 </html>

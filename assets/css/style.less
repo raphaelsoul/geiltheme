@@ -9,7 +9,10 @@ content
 5. Animation
 */
 
-* {padding:0px;margin:0px;}
+* {
+  padding: 0;
+  margin:0;
+}
 
 /*======0. Variations=========*/
 /*COLORS*/
@@ -51,7 +54,7 @@ footer {}
 /*=========================*/
 
 /*====2. Navigation========*/
-.nav {
+/*.nav {
   //basic nav style
   background-color: @NaviBgColor;
   height: 100%;
@@ -60,16 +63,46 @@ footer {}
   padding: 0;
   margin: 0;
 }
-.nav-opened {
-  //nav when opened
-  width: 240px;
-  .nav;
-}
 
-.nav-closed {
+.nav-slide {
   //nav when closed
   width: @NavClosedWidth;
+  left: 32px;
   .nav;
+  transition: all 0.3s ease-in-out 0.1s;
+}*/
+
+.card-holder {
+  position: fixed;
+  width: 0px;
+  overflow: visible;
+}
+
+.card-wrapper {
+  display: inline-block;
+  float: right;
+  clear: both;
+}
+
+.card {
+  position: relative;
+  left: 32px;
+  padding: 16px 32px 16px 64px;
+  margin: 8px;
+  x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+.card:hover {
+  position: relative;
+  left: 100%;
+  margin-left: -32px;
+  box-shadow:
+    0 -8px 8px -8px rgba(0, 0, 0, 0.5),
+  0 8px 8px -8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
 }
 
 div.nav-menu {
@@ -106,11 +139,17 @@ header.logo h1 {
 
 
 /*=====5. Animation==========*/
-.content{  transition:all 0.5s 0.5s cubic-bezier(0.020, 0.020, 0.000, 1.000); transform-origin:100% 50%; -webkit-transition:all 0.5s 0s cubic-bezier(0.020, 0.020, 0.000, 1.000); -webkit-transform-origin:100% 50%;}
+.content{
+  transition:all 0.5s 0.5s cubic-bezier(0.020, 0.020, 0.000, 1.000);
+  transform-origin:100% 50%;
+  -webkit-transition:all 0.5s 0s cubic-bezier(0.020, 0.020, 0.000, 1.000);
+  -webkit-transform-origin:100% 50%;}
 
 .content.rotate{
-  transition:all 0.5s 0s cubic-bezier(0.020, 0.020, 0.000, 1.000); transform-origin:100% 50%; transform:perspective(4000px) rotateY(-20deg);
-  -webkit-transition:all 0.5s 0s cubic-bezier(0.020, 0.020, 0.000, 1.000); -webkit-transform-origin:100% 50%; -webkit-transform:perspective(4000px) rotateY(-20deg);
+  transition:all 0.5s 0s cubic-bezier(0.020, 0.020, 0.000, 1.000);
+  transform-origin:100% 50%; transform:perspective(4000px) rotateY(-20deg);
+  -webkit-transition:all 0.5s 0s cubic-bezier(0.020, 0.020, 0.000, 1.000);
+  -webkit-transform-origin:100% 50%; -webkit-transform:perspective(4000px) rotateY(-20deg);
 }
 
 
