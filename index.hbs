@@ -1,11 +1,92 @@
 {{!< default}}
+<div class="tile-area tile-area-scheme-dark fg-white" style="height: 100%; max-height: 100% !important;">
+    <h1 class="tile-area-title">{{@blog.title}}</h1>
+    <div class="tile-area-controls">
+        <button class="image-button icon-right bg-transparent fg-white bg-hover-dark no-border"><span class="sub-header no-margin text-light">Geilcode.com</span> <span class="icon mif-user"></span></button>
+        <button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showCharms('#charmSearch')"><span class="mif-search"></span></button>
+        <button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showCharms('#charmSettings')"><span class="mif-cog"></span></button>
+    </div>
 
 
-{{> "navigation"}}
-<main class="content">
-    {{> "header"}}
+    {{#foreach posts}}
+    <div class="tile-group double">
+        <span class="tile-group-title">{{{title}}}</span>
+        <div class="tile-container">
+            <div class="tile-large bg-red" data-role="tile" data-effect="slideLeft">
+                <div class="tile-content">
+                    <a href="{{url}}" class="live-slide">{{#if image}}<img src="{{image}}" alt="{{{title}}}" data-role="fitImage" data-format="fill">
+                    {{/if}}>
+                    </a>
+                    <span>{{excerpt characters="120"}}</span>
+                </div>
+            {{#if tags}}<div class="tile-label">
+                {{#foreach tags}}
+                    <a href="{{url}}">{{name}}</a>{{#if @last}} {{else}}, {{/if}}
+                {{/foreach}}
+            </div>{{/if}}
+            </div>
+        </div>
+    </div>
+    {{/foreach}}
 
-    {{> "loop"}}
+    <div class="tile-group double">
+        <span class="tile-group-title">Autor</span>
+        <div class="tile-container">
+            <div class="tile bg-teal fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-pencil"></span>
+                </div>
+                <span class="tile-label">Editor</span>
+            </div>
+            <div class="tile bg-darkGreen fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-shopping-basket"></span>
+                </div>
+                <span class="tile-label">Store</span>
+            </div>
+            <div class="tile bg-cyan fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-skype"></span>
+                </div>
+                <div class="tile-label">Skype</div>
+            </div>
+            <div class="tile bg-darkBlue fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-cloud"></span>
+                </div>
+                <span class="tile-label">OneDrive</span>
+            </div>
+        </div>
+    </div>
 
-    {{> "footer"}}
-</main>
+    <div class="tile-group double">
+        <span class="tile-group-title">About</span>
+        <div class="tile-container">
+            <div class="tile bg-teal fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-pencil"></span>
+                </div>
+                <span class="tile-label">Editor</span>
+            </div>
+            <div class="tile bg-darkGreen fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-shopping-basket"></span>
+                </div>
+                <span class="tile-label">Store</span>
+            </div>
+            <div class="tile bg-cyan fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-skype"></span>
+                </div>
+                <div class="tile-label">Skype</div>
+            </div>
+            <div class="tile bg-darkBlue fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-cloud"></span>
+                </div>
+                <span class="tile-label">OneDrive</span>
+            </div>
+        </div>
+    </div>
+
+</div>
