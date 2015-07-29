@@ -1,0 +1,33 @@
+body.bg-pic {
+    /* 图片地址 */
+    /*background-image: url(images/background-photo.jpg);*/
+
+    /* 图片水平垂直居中 */
+    background-position: center center;
+
+    /* 背景图不重复 */
+    background-repeat: no-repeat;
+
+    /* 图片在viewport中固定，以便即使内容大于图片，图片也不会移动 */
+    background-attachment: fixed;
+
+    /* 图片基于容器缩放 */
+    background-size: cover;
+
+    /* 图片加载中有一个背景色 */
+    background-color:#464646;
+
+    font-family: 'microsoft yahei',Arial,sans-serif;
+
+    /* 以上属性的缩放方式
+     * background: url(background-photo.jpg) center center cover no-repeat fixed;
+     */
+}
+
+/* 移动设备相关的CSS */
+@media only screen and (max-width: 767px) {
+    body {
+        /* 在移动互联情况下，使用更小的背景图片，以便更快的加载 */
+        /*background-image: url(images/background-photo-mobile-devices.jpg);*/
+    }
+}
