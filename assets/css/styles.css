@@ -1,0 +1,61 @@
+/*variables list*/
+/* @VariableName: #FFFFFF*/
+/*responsive Design*/
+/* 1.normal styles */
+/* 1. sidebar styles */
+body nav {
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  /*background-color: #207ac9;*/
+}
+h1.logo {
+  /*background-color: #009999;*/
+  position: relative;
+  font-size: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Lobster', helvetica, arial;
+}
+h1.logo a {
+  text-decoration: none;
+  color: #666;
+  position: relative;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(50%, rgba(0, 0, 0, 0.5)), to(#000000));
+  background-color: transparent;
+}
+h1.logo:after {
+  /*content: 'Raphael';*/
+  color: #d6d6d6;
+  text-shadow: 0 1px 0 white;
+}
+/*@media screen and (min-width:1440px) and (max-width:1600px){}*/
+@media screen and (min-width: 1440px) {
+  /*大于等于1440*/
+  /*这里是特定的样式表*/
+  /*
+  body,input,textarea,select,small,a{font-size:14px;}
+  */
+}
+@media screen and (max-width: 1024px) {
+  /*懒人建站*/
+  h1 {
+    color: blue;
+  }
+}
+@media screen and (max-width: 768px) {
+  /*不大于768px的设备尺寸中 响应式布局的特定样式*/
+  h1 {
+    color: red;
+  }
+}
+@media screen and (max-width: 360px) {
+  h1 {
+    color: chartreuse;
+  }
+}
+@media screen and (max-width: 320px) {
+  h1 {
+    color: mediumpurple;
+  }
+}
