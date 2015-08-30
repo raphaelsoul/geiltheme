@@ -1,0 +1,18 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+
+{{!-- Add a `featured` class to the first post on each page, if it has an image and isn't already featured --}}
+<article>
+    <div>
+        <h1><a href="{{url}}">{{title}}</a></h1>
+    </div>
+
+    <div>
+        <p>{{excerpt characters="45"}}</p>
+        <a href="{{url}}">继续阅读</a>
+    </div>
+</article>
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+<!--{{pagination}}-->
