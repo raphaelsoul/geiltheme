@@ -7,10 +7,17 @@
 @LogoTextColor: HotPink;
 @LogoTextShadowColor: darkred;
 
+/*LOGO STYLES*/
 @RotateDegree: 90deg;
 @LogoRotateOriginX: 0%;
 @LogoRotateOriginY: 100%;
 @LogoRotateOriginZ: 0%;
+
+/*SIDEBAR STYLE VARIS*/
+@PostAreaRotateYDegree: 30deg;
+@PostAreaRotateOriginX: 50%;
+@PostAreaRotateOriginY: 50%;
+@PostAreaRotateOriginZ: 0%;
 
 * {
   padding: 0;
@@ -19,6 +26,17 @@
 html, body {
   height: 100%;
   width: 100%;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-repeat: no-repeat !important;
+  -moz-background-size:100%;
+  background-size:100%;
+}
+
+body .covered {
+  /*filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";*/
+  -moz-background-size:100%;
+  background-size:100%;
+
 }
 
 /*---------------------*/
@@ -28,6 +46,7 @@ html, body {
   padding: 0;
   margin: 0;
   background-color:mediumpurple;
+  width:100%;
 }
 
 .sidebar {
@@ -35,14 +54,24 @@ html, body {
   width: @SidebarWidthExtended;
   height: 100%;
   position: fixed;
+  float: left;
   left: @SidebarWidthToggled - @SidebarWidthExtended;
 }
 
 .posts-area {
   position: relative;
+  float: left;
   height: 100%;
+  width:100%;
   margin-left: @SidebarWidthToggled;
+  /*padding-left: 2rem;*/
   background-color:transparent;
+  transform-origin: 100% 50%;
+}
+
+article {
+  background-color: #46ad55;
+  margin: 1rem;
 }
 /*--------------------**/
 /********1. LOGO********/
@@ -73,6 +102,9 @@ html, body {
 /*****2. SIDEBAR *****/
 /********************/
 
+/********************/
+/*****X. Responsive *****/
+/********************/
 /*@media screen and (min-width:1440px) and (max-width:1600px){}*/
 @media screen and (min-width:1440px){ /*大于等于1440*/
   /*这里是特定的样式表*/
@@ -101,4 +133,39 @@ html, body {
   h1 {
     color: mediumpurple;
   }
+}
+
+/********************/
+/*****Y. Animation *****/
+/********************/
+@keyframes rotated
+{
+  0%   {transform:rotateY(@PostAreaRotateYDegree*0%)}
+  25%  {transform:rotateY(@PostAreaRotateYDegree*25%)}
+  50%  {transform:rotateY(@PostAreaRotateYDegree*50%)}
+  100% {transform:rotateY(@PostAreaRotateYDegree*100%)}
+}
+
+@-moz-keyframes rotated /* Firefox */
+{
+  0%   {transform:rotateY(@PostAreaRotateYDegree*0%)}
+  25%  {transform:rotateY(@PostAreaRotateYDegree*25%)}
+  50%  {transform:rotateY(@PostAreaRotateYDegree*50%)}
+  100% {transform:rotateY(@PostAreaRotateYDegree*100%)}
+}
+
+@-webkit-keyframes rotated /* Safari 和 Chrome */
+{
+  0%   {transform:rotateY(@PostAreaRotateYDegree*0%)}
+  25%  {transform:rotateY(@PostAreaRotateYDegree*25%)}
+  50%  {transform:rotateY(@PostAreaRotateYDegree*50%)}
+  100% {transform:rotateY(@PostAreaRotateYDegree*100%)}
+}
+
+@-o-keyframes rotated /* Opera */
+{
+  0%   {transform:rotateY(@PostAreaRotateYDegree*0%)}
+  25%  {transform:rotateY(@PostAreaRotateYDegree*25%)}
+  50%  {transform:rotateY(@PostAreaRotateYDegree*50%)}
+  100% {transform:rotateY(@PostAreaRotateYDegree*100%)}
 }

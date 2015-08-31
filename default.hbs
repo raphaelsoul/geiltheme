@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="{{asset "css/styles.css"}}"/>
 
 </head>
-<body>
+<body class="covered" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{else}}{{/if}}>
 <!--header-->
 <!--banner/nav-->
     <div class="body-wrapper">
-        <div class="sidebar">
+        <div id="sidebar" class="sidebar">
             <div class="logo">
                 <a href="#">
                     <h1>Geilcode</h1>
@@ -28,10 +28,13 @@
             </div>
         </div>
     <!--main-->
-        <div class="posts-area">
+        <div id="PostArea" class="posts-area">
             {{{body}}}
         </div>
     </div>
     <!--footer-->
+
+    <script type="text/javascript" src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{asset "js/custom.js"}}"></script>
 </body>
 </html>
