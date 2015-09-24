@@ -1,0 +1,66 @@
+/*
+style content Menu
+
+0.reset and global styling
+1.import
+2.
+3.
+*/
+
+/*0.reset and global styling*/
+* {
+	padding: 0;
+	margin:0;
+}
+
+body.home-template {
+	z-index: -100;
+	background: transparent url("../img/bg.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+nav {
+	height:100%;
+	width:15%; /* width of navigation*/
+	position: fixed;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#2894FF), to(#64A600));
+	left: 0;
+	top: 0;
+}
+
+div.main {
+	left:15%;/*width of navigation*/
+	height:100%;
+	width:85%;
+	position: relative;
+}
+
+section.post-wrapper {
+	position: relative;
+	padding-left: 5rem;
+	padding-right: 5rem;
+	padding-top:2rem;
+	padding-bottom:2rem;
+	background-color: transparent;
+}
+
+article {
+    margin-top:2rem;
+    margin-bottom:2rem;
+	background-color: rgba(255,255,255,0.5);
+}
+
+section {
+	overflow:hidden;
+	zoom:1
+}
+
+section>div.post-img{
+	float: left;
+	width: 40%;
+}
+
+section>div.post-expecert{
+	float: right;
+	width: 60%;
+}
