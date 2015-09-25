@@ -1,16 +1,20 @@
 /*
 style content Menu
 
-0.reset and global styling
-1.import
-2.
-3.
+0. reset and global styling
+1. navigation styling
+2. article styling
+3. pagination styling
+4. footer styling
+5. animation
 */
 
 /*0.reset and global styling*/
 * {
 	padding: 0;
 	margin:0;
+	font-family: Microsoft YaHei, helvetica, verdana, sans-serif;
+	/*Droid Serif, */
 }
 
 body.home-template {
@@ -19,15 +23,58 @@ body.home-template {
 	background-size: cover;
 }
 
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-down {
+	position: fixed;
+	bottom:0;
+}
+/*1. navigation styling*/
 nav {
 	height:100%;
 	width:15%; /* width of navigation*/
 	position: fixed;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#2894FF), to(#64A600));
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#999), to(#64A600));
 	left: 0;
 	top: 0;
+	padding:0rem 0rem 1rem 1rem;
 }
 
+nav h1 {
+	font-size:3.5rem;
+}
+header.logo {
+	text-align: left;
+	background: url("../img/galaxy.jpg") transparent;
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    animation: 10s infinite linear animate;
+}
+
+header.logo:before {
+	content:"";
+	width:100%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background-color: transparent;
+	z-index: -1;
+}
+
+nav li {
+	list-style-type: none;
+	text-align: center;
+}
+
+/*2. article styling*/
 div.main {
 	left:15%;/*width of navigation*/
 	height:100%;
@@ -48,19 +95,85 @@ article {
     margin-top:2rem;
     margin-bottom:2rem;
 	background-color: rgba(255,255,255,0.5);
+	border-radius: 3rem;
+	min-height: 10%;
+	padding:2rem;
 }
-
-section {
-	overflow:hidden;
-	zoom:1
-}
-
+/*section header*/
+article>header { display: inline;}
 section>div.post-img{
 	float: left;
+	border-radius: 3rem;
 	width: 40%;
+	overflow:hidden;
+}
+
+.post-img img {
+	/*object-fit:cover;*/
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+/*section expecert*/
+section { /*main content zone of article*/
+	overflow:hidden;
+	zoom:1;
+	/*display: inline;*/
+}
+
+.post-header h3 {
+	font-size: 3rem;
+	text-align: center;
 }
 
 section>div.post-expecert{
 	float: right;
-	width: 60%;
+	width: 55%;
+	padding-left: 0.5rem;
+}
+
+/*section footer*/
+article>footer {
+	display: inline;
+	padding-top:1rem;
+	padding-bottom: 1rem;
+}
+
+/*3. pagination styling*/
+div.pagination {
+	text-align: center
+}
+
+
+/*4. footer styling*/
+footer>div {
+	display: inline;
+}
+
+/*5. animation */
+/*img 360 deg rotate*/
+.rotate { 
+	transition:All 0.4s ease-in-out;
+	-webkit-transition:All 0.4s ease-in-out;    
+	-moz-transition:All 0.4s ease-in-out;   
+	-o-transition:All 0.4s ease-in-out;
+	border-radius: 3rem;
+}
+
+.rotate:hover {
+	transform:rotate(360deg);
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	-o-transform:rotate(360deg);
+	-ms-transform:rotate(360deg);
+	border-radius: 3rem;
+}
+
+@keyframes animate {
+    0% {
+        background-position:0;
+    }
+    100% {
+        background-position:-1000px 0;
+    }
 }
