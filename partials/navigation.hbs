@@ -1,0 +1,11 @@
+<nav>
+    <header class="logo">
+        <h1>{{#if @blog.title}}{{@blog.title}}{{else}}Geilcode{{/if}}</h1>
+    </header>
+    <ul class="nav">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+    <footer class="pull-down">?2015 copyright @Mr.Yasasii</footer>
+</nav>

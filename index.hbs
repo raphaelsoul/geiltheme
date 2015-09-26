@@ -1,0 +1,23 @@
+{{!< default}}
+{{#foreach posts}}
+<article>
+	<header class="post-header"><a href="{{url}}"><h3>{{title}}</h3></a></header>
+	<section>
+		{{#if image}}
+			<div class="post-img"><a href="{{url}}"><img class="rotate" src="{{image absolute="true"}}"></a></div>
+		{{/if}}
+		<div class="post-expecert">{{excerpt characters="60"}}<p><a href="{{url}}">ReadMore</a></p></div>
+		</section>
+		<footer>
+			<div class="pull-left">Athored by <span style="font-weight:700;">{{author}}</span> </div>
+			<div> on <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="MMMM DD, YYYY"}}</time></div>
+			<div class="pull-right">
+				{{#foreach tags}}
+					<span class="label"><a href="{{url}}" title="{{name}}" class="tag-{{id}}">{{name}}</a></span>
+				{{/foreach}}
+			</div>
+		</footer>
+	</article>
+{{/foreach}}
+
+{{pagination}}
