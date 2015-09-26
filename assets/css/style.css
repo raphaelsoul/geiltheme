@@ -6,25 +6,144 @@ style content Menu
 2. article styling
 3. pagination styling
 4. footer styling
-5. animation
+5. post styling
+6. animation
 */
+
+/*5. post styling*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    color: #000;
+    font-size: 28px;
+}
+
+h2 {
+    border-bottom: 2px solid #000;
+    color: #000000;
+    font-size: 24px;
+}
+
+h3 {
+    border-bottom: 2px solid #000;
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    color: #777777;
+    background-color: inherit;
+    font-size: 14px;
+}
+
+hr {
+    height: 0.2em;
+    border: 0;
+    color: #CCCCCC;
+    background-color: #000;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+    margin: 15px 0;
+}
+
+p{
+    margin:1em 0;
+}
+
+pre {
+    overflow: auto;
+}
+
+pre code {
+    border: none;
+    padding: 0;
+}
+
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    background-color:#F8F8F8;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 0 0.2em;
+    line-height: 1;
+    color: #ff2222;
+}
+
+pre > code {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+blockquote{
+    color:#666666;
+    margin:0;
+    padding-left: 3em;
+    border-left: 0.5em #EEE solid;
+}
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; max-width:100%;}
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+    body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+    body{font-size:16px;}
+}
+
+
+
 
 /*0.reset and global styling*/
 * {
 	padding: 0;
 	margin:0;
 	font-family: Microsoft YaHei, helvetica, verdana, sans-serif;
-	text-decoration: none;
 	/*Droid Serif, */
 }
 
+li a {
+    text-decoration: none;
+}
 a {
 	color: black;
 }
 
 body.home-template {
 	z-index: -100;
-	background: transparent url("../img/bg.jpg") no-repeat center center fixed;
 	background-size: cover;
 }
 
@@ -55,11 +174,12 @@ nav h1 {
 	font-size:3.5rem;
 }
 
-nav li {
+.nav li {
 	margin-top: 0.3rem;
 	margin-bottom: 0.3rem;
 	font-weight: 900;
 }
+
 header.logo {
 	text-align: left;
 	background: url("../img/galaxy.jpg") transparent;
@@ -159,15 +279,15 @@ footer>div {
 	font-size: 75%;
 	font-weight: bold;
 	line-height: 1;
-	color: orange;
+	/*color: orange;*/
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
 	background-color:orange;
-
 }
 
 .label a {color:black;}
+.label a:after {color:black;}
 
 /*3. pagination styling*/
 div.pagination {
@@ -182,7 +302,7 @@ footer>div {
 	display: inline;
 }
 
-/*5. animation */
+/*6. animation */
 /*img 360 deg rotate*/
 .rotate { 
 	transition:All 0.4s ease-in-out;

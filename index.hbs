@@ -12,9 +12,7 @@
 			<div class="pull-left">Athored by <span style="font-weight:700;">{{author}}</span> </div>
 			<div> on <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="MMMM DD, YYYY"}}</time></div>
 			<div class="pull-right">
-				{{#foreach tags}}
-					<span class="label"><a href="{{url}}" title="{{name}}" class="tag-{{id}}">{{name}}</a></span>
-				{{/foreach}}
+				{{tag}}
 			</div>
 		</footer>
 	</article>
