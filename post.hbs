@@ -1,19 +1,88 @@
 {{!< default}}
-{{#post}}
-              
-<article class="{{post_class}}">
-  <header class="post-header">
-    <h1 class="post-title">{{title}}</h1>
-    <section class="post-meta">
-      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-        {{date format="DD MMMM YYYY"}}
-      </time> 
-      {{tags prefix=" on "}}
-    </section>  
-  </header>
-  <section class="post-content">
-    {{content}}
-  </section>     
-</article>
 
-{{/post}}
+	<section>
+	{{#post}}
+<script>
+document.body.style.backgroundImage="url('{{image}}')";
+</script>
+		<article class="gt-subpage gt-post-content">
+
+			<section>
+				<header>
+					<h1 class="gt-post-header">{{{title}}}</h1>
+					{{#if tags}}
+					<section>
+						<div class="gt-tags">
+							<ul>
+								{{#foreach tags}}
+								<li class="tag"><a href="{{url}}">{{name}}</a></li>
+								{{/foreach}}
+							</ul>
+						</div>
+					</section>
+					{{/if}}
+				</header>
+				<section>
+					{{content}}
+				</section>
+			</section>
+		</article>
+		<aside class="gt-subpage gt-post-content" style="display:none;">
+			I am author
+			<!-- custom content here -->
+		</aside>
+		<aside class="gt-subpage gt-relative-wrapper">
+			{{#prev_post}}
+			<div class="prev-post">
+				<section class="gt-bg" style="{{#if image}}background-image:url('{{image}}');{{else}}background-color:white;{{/if}}"></section>
+				<section class="gt-quick-view">
+					<header>
+						<h6>
+							<a href="{{url}}">{{title}}</a>
+						</h6>
+					</header>
+				</section>
+			</div>
+			{{/prev_post}}
+			{{#next_post}}
+			<div class="next-post">
+				<section class="gt-bg" style="{{#if image}}background-image:url('{{#next_post}}{{image}}{{/next_post}}');{{else}}background-color:white;{{/if}}"></section>
+				<section class="gt-quick-view">
+					<header>
+						<h6>
+							<a href="{{url}}">{{title}}</a>
+						</h6>
+					</header>
+				</section>
+			</div>
+			{{/next_post}}
+		</aside>
+		<aside class="gt-subpage gt-post-content">
+			<div id="disqus_thread"></div>
+		</aside>
+
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//your_disqusid.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		</aside>
+	{{/post}}
+	</section>
+

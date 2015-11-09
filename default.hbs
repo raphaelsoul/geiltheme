@@ -6,21 +6,21 @@
 	<meta http-equiv="charset" content="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="shortcut icon" type="image/x-icon" href="{{asset "img/favicon16.ico"}}" sizes="16x16">
-	<link rel="shortcut icon" type="image/x-icon" href="{{asset "img/favicon32.ico"}}" sizes="32x32">
-	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}">
-	<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset 'img/favicon16.ico'}}" sizes="16x16">
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset 'img/favicon32.ico'}}" sizes="32x32">
+	<link rel="stylesheet" type="text/css" href="{{asset 'css/style.css'}}">
 	{{ghost_head}}
 </head>
-<body class="home-template" style="background: transparent url({{@blog.cover}}) no-repeat center center fixed">
-    {{navigation}}
-<div class="main">
-	<section class="post-wrapper">
-		{{{body}}}
-	</section>
-</div>
-<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-<script >hljs.initHighlightingOnLoad();</script>
-{{ghost_foot}}
+<body class="{{body_class}}" style="background-image: url('{{@blog.cover}}');">
+	{{navigation}}
+	
+	{{{body}}}
+
+	{{> footer}}
+
+	<script type="text/javascript" src="{{asset 'js/jquery.min.js'}}"></script>
+	<script type="text/javascript" src="{{asset 'js/main.js'}}"></script>
+	{{ghost_footer}}
 </body>
 </html>

@@ -1,0 +1,63 @@
+@import "variables.less";
+/* 标题 */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin: 0;
+	margin: @title-margin 0;
+}
+
+h1 {font-size: @max-title;}
+h2 {font-size: @max-title - @title-step;}
+h3 {font-size: @max-title - @title-step * 2;}
+h4 {font-size: @max-title - @title-step * 3;}
+h5 {font-size: @max-title - @title-step * 4;}
+h6 {font-size: @max-title - @title-step * 5;}
+
+/* 文本 */
+em {color:#661200}
+strong {font-weight: 900;color: #661200}
+
+/* 无顺列表 */
+ul {}
+ul>li {list-style-type: circle;}
+
+/* 有顺列表 */
+ol {}
+ol>li {list-style-type: decimal;}
+
+/* 超链接 */
+a {}
+
+/* 图片 */
+img {}
+
+/* 代码块 */
+pre {
+	font-family: Consolas, monospace, serif;
+	border: 1px solid #dddddd;
+	background: #fafafa;
+	border-radius: 3px;
+}
+
+/* 行内代码 */
+code {
+	font-family: Consolas, monospace, serif;
+	color: @code-font-color;
+	white-space: nowrap;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	background: @code-bg-color;
+	padding:0 0.3rem;
+}
+
+
+/* 引用 */
+blockquote {
+	border-left: @quote-margin solid @quote-tag-color;
+	background-color: @quote-bg-color;
+	margin: @quote-margin 0;
+	padding: @quote-margin @quote-margin * 2 @quote-margin @quote-margin * 3;
+}
+
+/* 分割线 */
+hr {}

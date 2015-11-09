@@ -1,9 +1,11 @@
-<div class="pagination">
-    {{#if prev}}
-        <a class="newer-posts" href="{{page_url prev}}">&larr; Newer Posts</a>
-    {{/if}}
-    <span class="page-number">Page {{page}} of {{pages}}</span>
-    {{#if next}}
-        <a class="older-posts" href="{{page_url next}}">Older Posts &rarr;</a>
-    {{/if}}
-</div>
+		<footer class="gt-subpage gt-pagination">
+			<div>
+				{{#if prev}}
+				<a href="{{page_url prev}}">prev</a>
+				{{/if}}
+					{{page}} / {{pages}}
+				{{#if next}}
+				<a href="{{page_url next}}">next</a>
+				{{/if}}
+			</div>
+		</footer>	

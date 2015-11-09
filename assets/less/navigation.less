@@ -1,0 +1,58 @@
+@import "variables.less";
+
+nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+.baseli {list-style-type: none;padding:0.5rem;text-align: center;}
+nav ul li a { text-decoration: none;color: black}
+
+nav ul li {
+	.baseli;
+}
+
+nav ul li:hover {
+	.baseli;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+	background-color: @naviElement-color;
+}
+
+.basenavi {
+	background-color: @navi-bg-color;
+	float: left;
+	position: fixed;
+	height: 100%;
+	width: @navi-width;
+	top: 0;
+}
+nav.navi {
+	.basenavi;
+	left: -@navi-movement;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+	transition:all 0.5s ease-in-out;
+}
+
+nav.navi:hover{
+	.basenavi;
+	transform:translateX(@navi-movement);
+	
+}
+
+.gt-nav-tag {
+	direction: rtl;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-right:0.5rem;
+	color: white;
+	text-shadow: 5px 5px 5px #FF0000;
+}
+
+.gt-logo {
+	font-family: Misaaki;
+	font-size: 4rem;
+	color: #7D02FF;
+	top: 0;
+	margin-left: 100% - 61.8%;
+}

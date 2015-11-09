@@ -1,0 +1,94 @@
+@import "variables.less";
+
+.post-template {
+	background-color: @post-bg-color;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.gt-subpage{
+	padding: 0.5rem 2rem;
+	background-color: @subpage-bg-color;
+	box-shadow: 0 0 5rem rgba(0, 154, 221, 1);
+	margin: 3rem auto 3rem auto;
+	width:61.8%;
+}
+
+.gt-post-content {
+	.gt-subpage;
+	position: relative;
+}
+
+.gt-post-header {
+	text-align: center;
+}
+
+.gt-relative-wrapper {
+	.gt-subpage;
+	position: relative;
+	height: 5rem;
+	padding: 0;
+	/* width: %; */
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.gt-IMGwrapper {
+	overflow: hidden;
+	width: 100%;
+}
+.gt-post-img {
+	width: 100%;
+}
+
+.baseExt-relativ {
+	width: 49%;
+	background-color: @post-bg-color;
+	background-position: 50% 50%;
+	background-size:cover;
+	background-repeat: no-repeat;
+	margin: 0.5%;
+	height: 100%;
+	position: relative;
+}
+
+.prev-post {
+	.baseExt-relativ;
+	float: left;
+
+}
+.next-post {
+	float: left;
+	.baseExt-relativ;
+}
+
+.qv {
+	position: absolute; top:0;left: 0;
+	padding:0.5rem;
+	text-align: center;
+	margin-left: 100% - 61.8%;
+}
+.gt-quick-view {
+	.qv;
+}
+
+.gt-bg {
+	height: 100%;
+	filter:blur(2px);
+	-webkit-filter:blur(2px);
+	background-position: 50% 50%;
+	background-size:cover;
+	background-repeat: no-repeat;
+	transition:all 0.5s ease-in-out;
+}
+
+.gt-bg:hover {
+	height: 100%;
+	filter:blur(0px);
+	-webkit-filter:blur(0px);
+	background-position: 50% 50%;
+	background-size:cover;
+	background-repeat: no-repeat;
+}

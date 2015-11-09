@@ -1,0 +1,31 @@
+@import "variables.less";
+
+.home-template {
+	background-color: @post-bg-color;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.paged {
+	.home-template;
+}
+.gt-pagination {
+	border-radius: 2rem;
+	text-align: center;
+}
+
+.gt-tags ul {margin: 0;padding: 0;}
+.gt-tags li {
+	list-style-type: none;
+	display: inline;
+}
+
+.tag {
+	background-color: @tag-bg-color;
+	padding: 0 5px;
+	border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+}
+
+.gt-index-title {color: black !important;}
