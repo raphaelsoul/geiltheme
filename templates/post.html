@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,76 +8,79 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 
-	<meta name
 	<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon16.ico" sizes="16x16">
 	<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon32.ico" sizes="32x32">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
-<body class="gt-post-temp" style="background-image: url('/assets/img/bg.jpg');">
-	<nav class="navi">
+<body class="post-template tag-php" style="background-image: url('/assets/img/bg.jpg');">
+		<nav class="navi">
 		<div class="gt-logo">R</div>
 		<div class="gt-nav-tag">
 			噫
 		</div>
 		<div>
 			<ul>
-				<li><a href="./homepage.html">index</a></li>
-				<li><a href="./post.html">post</a></li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">NAVI</a></li>
+				<li><a href="#">NAVI</a></li>
+				<li><a href="#">NAVI</a></li>
 			</ul>
 		</div>
 	</nav>
+
+	
+	
 	<section>
+<script>
+document.body.style.backgroundImage="url('/content/images/2015/11/QQ--20151026214019.jpg')";
+</script>
 		<article class="gt-subpage gt-post-content">
 
 			<section>
 				<header>
-					<h1 class="gt-post-header">TITLE</h1>
+					<h1 class="gt-post-header">Nginx fastcgi_param详解</h1>
 					<section>
 						<div class="gt-tags">
 							<ul>
-								<li class="tag">tag1</li>
-								<li class="tag">tag1</li>
-								<li class="tag">tag1</li>
-								<li class="tag">tag1</li>
+								<li class="tag"><a href="/tag/php/">php</a></li>
 							</ul>
 						</div>
-				</section>
+					</section>
 				</header>
 				<section>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, impedit fuga sequi in cupiditate eveniet atque dolores veritatis! Earum cumque quos illo autem quod natus ab dolor perspiciatis eius quisquam.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, impedit fuga sequi in cupiditate eveniet atque dolores veritatis! Earum cumque quos illo autem quod natus ab dolor perspiciatis eius quisquam.</p>
-					<h1>h1</h1>
-					<h2>h2</h2>
-					<h3>h3</h3>
-					<h4>h4</h4>
-					<h5>h5</h5>
-					<h6>h6</h6>
-					<blockquote>
-						<p>hellp, world</p>
-					</blockquote>
-					<hr>
-					<p><strong>strong</strong>,<em>em</em>,<strong><em>strong&em</em></strong></p>
-					<p><a href="#">link</a></p>
-					<p>the program language <code>python</code> is a good script language</p>
-					<pre>
-						def python():
-					pass
-					</pre>
-					<hr>
-					<ul>
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-					<ol>
-						<li>python</li>
-						<li>node.js</li>
-						<li>html</li>
-						<li>css</li>
-					</ol>
+					<p>fastcgi_param主要是对php运行的服务器参数的设置。最后会传递到php的全局变量<code>$_SERVER</code>中。  </p>
+
+<pre><code>fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;#脚本文件请求的路径  
+fastcgi_param  QUERY_STRING       $query_string; #请求的参数;如?app=123  
+fastcgi_param  REQUEST_METHOD     $request_method; #请求的动作(GET,POST)  
+fastcgi_param  CONTENT_TYPE       $content_type; #请求头中的Content-Type字段  
+fastcgi_param  CONTENT_LENGTH     $content_length; #请求头中的Content-length字段。  
+
+fastcgi_param  SCRIPT_NAME        $fastcgi_script_name; #脚本名称  
+fastcgi_param  REQUEST_URI        $request_uri; #请求的地址不带参数  
+fastcgi_param  DOCUMENT_URI       $document_uri; #与$uri相同。  
+fastcgi_param  DOCUMENT_ROOT      $document_root; #网站的根目录。在server配置中root指令中指定的值  
+fastcgi_param  SERVER_PROTOCOL    $server_protocol; #请求使用的协议，通常是HTTP/1.0或HTTP/1.1。    
+
+fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;#cgi 版本  
+fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version;#nginx 版本号，可修改、隐藏  
+
+fastcgi_param  REMOTE_ADDR        $remote_addr; #客户端IP  
+fastcgi_param  REMOTE_PORT        $remote_port; #客户端端口  
+fastcgi_param  SERVER_ADDR        $server_addr; #服务器IP地址  
+fastcgi_param  SERVER_PORT        $server_port; #服务器端口  
+fastcgi_param  SERVER_NAME        $server_name; #服务器名，域名在server配置中指定的server_name  
+
+#fastcgi_param  PATH_INFO           $path_info;#可自定义变量  
+
+# PHP only, required if PHP was built with --enable-force-cgi-redirect  
+#fastcgi_param  REDIRECT_STATUS    200;  
+
+在php可打印出上面的服务环境变量  
+如：echo $_SERVER['REMOTE_ADDR']  
+</code></pre>
+
+<p>以上是一般情况下的配置。有的时候会根据需要发生变化，在PHP中可以写一个php脚本将整个<code>$_SERVER</code>变量循环出来。</p>
 				</section>
 			</section>
 		</article>
@@ -86,18 +90,22 @@
 		</aside>
 		<aside class="gt-subpage gt-relative-wrapper">
 			<div class="prev-post">
-				<section class="gt-bg" style="background-image:url('/assets/img/bg.jpg');"></section>
+				<section class="gt-bg" style="background-image:url('/content/images/2015/11/5289279.jpg');"></section>
 				<section class="gt-quick-view">
 					<header>
-						<h6>Titladssssssssssssse</h6>
+						<h6>
+							<a href="/2015/09/30/sasskuai-su-ru-men/">Sass快速入门</a>
+						</h6>
 					</header>
 				</section>
 			</div>
 			<div class="next-post">
-				<section class="gt-bg" style="background-image:url('/assets/img/bg.jpg');"></section>
+				<section class="gt-bg" style="background-image:url('');"></section>
 				<section class="gt-quick-view">
 					<header>
-						<h6>Title</h6>
+						<h6>
+							<a href="/2015/10/17/ding-zhi-nginx-log-format/">定制nginx log format</a>
+						</h6>
 					</header>
 				</section>
 			</div>
@@ -120,7 +128,7 @@
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
         
-        s.src = '//raphaelsoul.disqus.com/embed.js';
+        s.src = '//yourdisqusid.disqus.com/embed.js';
         
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
@@ -129,11 +137,14 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 		</aside>
 	</section>
-	<footer class="gt-footer">
-		<p>footer & copyright</p>
-	</footer>
 
-	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../assets/js/main.js"></script>
+
+
+		<footer class="gt-footer">
+		<p>Copyright 2015-2016 by <a href="http://weibo.com/raphaelsoul">@MrYasasii_Hentai</a></p>
+	</footer>
+	<script type="text/javascript" src="/assets/js/jquery.min.js?v=a2bd02dc42"></script>
+	<script type="text/javascript" src="/assets/js/main.js?v=a2bd02dc42"></script>
+	
 </body>
 </html>

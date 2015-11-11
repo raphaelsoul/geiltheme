@@ -97,16 +97,41 @@ pre {
   border: 1px solid #dddddd;
   background: #fafafa;
   border-radius: 3px;
+  white-space: pre;
+  margin: 0 0 1.75rem 0;
 }
 /* 行内代码 */
-code {
+.basecode {
   font-family: Consolas, monospace, serif;
   color: #dd0055;
-  white-space: nowrap;
+  white-space: pre-wrap;
   border: 1px solid #dddddd;
   border-radius: 3px;
   background: #fafafa;
   padding: 0 0.3rem;
+  margin: 0 5px;
+}
+code {
+  font-family: Consolas, monospace, serif;
+  color: #dd0055;
+  white-space: pre-wrap;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  background: #fafafa;
+  padding: 0 0.3rem;
+  margin: 0 5px;
+}
+pre > code {
+  font-family: Consolas, monospace, serif;
+  color: #dd0055;
+  white-space: pre-wrap;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  background: #fafafa;
+  padding: 0 0.3rem;
+  margin: 0 5px;
+  /* word-wrap: break-word; */
+  border: 0;
 }
 /* 引用 */
 blockquote {
