@@ -29,13 +29,19 @@ nav ul li:hover {
 nav.navi {
 	.basenavi;
 	left: -@navi-movement;
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+	box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
 	transition:all 0.5s ease-in-out;
+	-webkit-transition:all 0.5s ease-in-out;
+	-moz-transition:all 0.5s ease-in-out;
+	-o-transition:all 0.5s ease-in-out;
 }
 
 nav.navi:hover{
 	.basenavi;
 	transform:translateX(@navi-movement);
+	-webkit-transform:translateX(@navi-movement);
+	-moz-transform:translateX(@navi-movement);
+	-o-transform:translateX(@navi-movement);
 	
 }
 
@@ -50,9 +56,8 @@ nav.navi:hover{
 }
 
 .gt-logo {
-	font-family: Misaaki;
+	font-family: "Matchup";
 	font-size: 4rem;
 	color: #7D02FF;
 	top: 0;
-	margin-left: 100% - 61.8%;
 }

@@ -10,6 +10,10 @@
 /* navigation variables */
 /* 0. RESET BROWSER STYLES */
 /* 0. RESET BROWSER STYLES */
+@font-face {
+  font-family: "Matchup";
+  src: url('../font/Matchup.otf');
+}
 html {
   height: 100%;
 }
@@ -183,8 +187,11 @@ nav.navi {
   width: 10rem;
   top: 0;
   left: -8rem;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
   transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 nav.navi:hover {
   background-color: #1A92FF;
@@ -194,6 +201,9 @@ nav.navi:hover {
   width: 10rem;
   top: 0;
   transform: translateX(8rem);
+  -webkit-transform: translateX(8rem);
+  -moz-transform: translateX(8rem);
+  -o-transform: translateX(8rem);
 }
 .gt-nav-tag {
   direction: rtl;
@@ -205,11 +215,10 @@ nav.navi:hover {
   text-shadow: 5px 5px 5px #FF0000;
 }
 .gt-logo {
-  font-family: Misaaki;
+  font-family: "Matchup";
   font-size: 4rem;
   color: #7D02FF;
   top: 0;
-  margin-left: 38.2%;
 }
 /* 3. article styling */
 .home-template {
@@ -239,7 +248,7 @@ nav.navi:hover {
   display: inline;
 }
 .tag {
-  background-color: #FF7600;
+  background-color: #6cc;
   padding: 0 5px;
   border-radius: 0.5rem 0.5rem 0rem 0.5rem;
 }
@@ -256,14 +265,14 @@ nav.navi:hover {
 .gt-subpage {
   padding: 0.5rem 2rem;
   background-color: #FFFFFF;
-  box-shadow: 0 0 5rem #009add;
+  box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
   margin: 3rem auto 3rem auto;
   width: 61.8%;
 }
 .gt-post-content {
   padding: 0.5rem 2rem;
   background-color: #FFFFFF;
-  box-shadow: 0 0 5rem #009add;
+  box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
   margin: 3rem auto 3rem auto;
   width: 61.8%;
   position: relative;
@@ -274,7 +283,7 @@ nav.navi:hover {
 .gt-relative-wrapper {
   padding: 0.5rem 2rem;
   background-color: #FFFFFF;
-  box-shadow: 0 0 5rem #009add;
+  box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
   margin: 3rem auto 3rem auto;
   width: 61.8%;
   position: relative;
