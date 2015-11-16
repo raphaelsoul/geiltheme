@@ -1,8 +1,4 @@
 @charset "utf-8";
-@font-face {
-  font-family: Misaaki;
-  src: url('Masaaki-Regular.otf');
-}
 /* global variables */
 /* a tag decoration */
 /* markdown variables */
@@ -58,6 +54,7 @@ h6 {
   font-weight: bold;
   margin: 0;
   margin: 1rem 0;
+  white-space: nowrap;
 }
 h1 {
   font-size: 350%;
@@ -178,6 +175,7 @@ nav ul li:hover {
   height: 100%;
   width: 10rem;
   top: 0;
+  z-index: 999;
 }
 nav.navi {
   background-color: #1A92FF;
@@ -186,6 +184,7 @@ nav.navi {
   height: 100%;
   width: 10rem;
   top: 0;
+  z-index: 999;
   left: -8rem;
   box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
   transition: all 0.5s ease-in-out;
@@ -200,6 +199,7 @@ nav.navi:hover {
   height: 100%;
   width: 10rem;
   top: 0;
+  z-index: 999;
   transform: translateX(8rem);
   -webkit-transform: translateX(8rem);
   -moz-transform: translateX(8rem);
@@ -382,3 +382,21 @@ nav.navi:hover {
 }
 /* 6. animation */
 /* 7. meadia query */
+@media screen and (max-width: 480px) {
+  .navi {
+    display: none;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 800px) {
+  .navi {
+    display: none;
+  }
+  .gt-post-header {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  .navi {
+    display: none;
+  }
+}
