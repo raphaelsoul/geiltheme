@@ -24,4 +24,5 @@ a self-used ghost theme. Free to use and copy.
 * Opera 8.4 +
 
 # ToDos
-* responsive design based on media query
+* <del>responsive design based on media query</del>
+* Material Desgin Wave effects
