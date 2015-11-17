@@ -1,9 +1,4 @@
 @charset "utf-8";
-/* global variables */
-/* a tag decoration */
-/* markdown variables */
-/* post page variables */
-/* navigation variables */
 /* 0. RESET BROWSER STYLES */
 /* 0. RESET BROWSER STYLES */
 @font-face {
@@ -39,6 +34,10 @@ a {
   color: #1578FE;
   text-decoration: none;
 }
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
 .tag > a {
   color: black;
   text-decoration: none;
@@ -54,25 +53,25 @@ h6 {
   font-weight: bold;
   margin: 0;
   margin: 1rem 0;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 h1 {
-  font-size: 350%;
+  font-size: 2rem;
 }
 h2 {
-  font-size: 300%;
+  font-size: 1.8rem;
 }
 h3 {
-  font-size: 250%;
+  font-size: 1.6rem;
 }
 h4 {
-  font-size: 200%;
+  font-size: 1.4rem;
 }
 h5 {
-  font-size: 150%;
+  font-size: 1.2rem;
 }
 h6 {
-  font-size: 100%;
+  font-size: 1rem;
 }
 /* 文本 */
 em {
@@ -99,6 +98,7 @@ pre {
   background: #fafafa;
   border-radius: 3px;
   white-space: pre;
+  text-indent: -0.5em;
   margin: 0 0 1.75rem 0;
 }
 /* 行内代码 */
@@ -111,6 +111,8 @@ pre {
   background: #fafafa;
   padding: 0 0.3rem;
   margin: 0 5px;
+  font-size: 1rem;
+  vertical-align: middle;
 }
 code {
   font-family: Consolas, monospace, serif;
@@ -121,6 +123,9 @@ code {
   background: #fafafa;
   padding: 0 0.3rem;
   margin: 0 5px;
+  font-size: 1rem;
+  vertical-align: middle;
+  text-indent: inherit;
 }
 pre > code {
   font-family: Consolas, monospace, serif;
@@ -131,6 +136,8 @@ pre > code {
   background: #fafafa;
   padding: 0 0.3rem;
   margin: 0 5px;
+  font-size: 1rem;
+  vertical-align: middle;
   /* word-wrap: break-word; */
   border: 0;
 }
@@ -143,67 +150,175 @@ blockquote {
 }
 /* 分割线 */
 /* 2. navigation styling */
-nav ul {
-  padding: 0;
-  margin: 0;
+@media screen and (max-width: 800px) {
+  nav.navi {
+    background-color: #1A92FF;
+    box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+    z-index: 999;
+    min-height: 1.8rem;
+  }
+  nav.navi ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav.navi ul li {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  nav.navi ul li:hover {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: #1A72FF;
+  }
+  .gt-logo {
+    font-family: "Matchup";
+    color: #7D02FF;
+    top: 0;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
 }
-.baseli {
-  list-style-type: none;
-  padding: 0.5rem;
-  text-align: center;
+@media screen and (min-width: 800px) and (max-width: 1200px) and (orientation: portrait) {
+  nav.navi {
+    background-color: #1A92FF;
+    box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+    z-index: 999;
+    min-height: 1.8rem;
+  }
+  nav.navi ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav.navi ul li {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  nav.navi ul li:hover {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: #1A72FF;
+  }
+  .gt-logo {
+    font-family: "Matchup";
+    color: #7D02FF;
+    top: 0;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
 }
-nav ul li a {
-  text-decoration: none;
-  color: black;
+@media screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape) {
+  nav.navi {
+    background-color: #1A92FF;
+    box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+    z-index: 999;
+    float: left;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 10rem;
+    left: -8rem;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+  }
+  nav.navi:hover {
+    background-color: #1A92FF;
+    box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+    z-index: 999;
+    float: left;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 10rem;
+    left: -8rem;
+    transform: translateX(8rem);
+    -webkit-transform: translateX(8rem);
+    -moz-transform: translateX(8rem);
+    -o-transform: translateX(8rem);
+  }
+  nav.navi ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav.navi ul li {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  nav.navi ul li:hover {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: #1A72FF;
+  }
+  .gt-logo {
+    font-family: "Matchup";
+    color: #7D02FF;
+    top: 0;
+    font-size: 3rem;
+  }
 }
-nav ul li {
-  list-style-type: none;
-  padding: 0.5rem;
-  text-align: center;
-}
-nav ul li:hover {
-  list-style-type: none;
-  padding: 0.5rem;
-  text-align: center;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-  background-color: #1A72FF;
-}
-.basenavi {
-  background-color: #1A92FF;
-  float: left;
-  position: fixed;
-  height: 100%;
-  width: 10rem;
-  top: 0;
-  z-index: 999;
-}
-nav.navi {
-  background-color: #1A92FF;
-  float: left;
-  position: fixed;
-  height: 100%;
-  width: 10rem;
-  top: 0;
-  z-index: 999;
-  left: -8rem;
-  box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-}
-nav.navi:hover {
-  background-color: #1A92FF;
-  float: left;
-  position: fixed;
-  height: 100%;
-  width: 10rem;
-  top: 0;
-  z-index: 999;
-  transform: translateX(8rem);
-  -webkit-transform: translateX(8rem);
-  -moz-transform: translateX(8rem);
-  -o-transform: translateX(8rem);
+@media screen and (min-width: 1200px) {
+  nav.navi {
+    background-color: #1A92FF;
+    box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+    z-index: 999;
+    float: left;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 10rem;
+    left: -8rem;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+  }
+  nav.navi:hover {
+    background-color: #1A92FF;
+    box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+    z-index: 999;
+    float: left;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 10rem;
+    left: -8rem;
+    transform: translateX(8rem);
+    -webkit-transform: translateX(8rem);
+    -moz-transform: translateX(8rem);
+    -o-transform: translateX(8rem);
+  }
+  nav.navi ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav.navi ul li {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  nav.navi ul li:hover {
+    list-style-type: none;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: #1A72FF;
+  }
+  .gt-logo {
+    font-family: "Matchup";
+    color: #7D02FF;
+    top: 0;
+    font-size: 3rem;
+  }
 }
 .gt-nav-tag {
   direction: rtl;
@@ -213,12 +328,7 @@ nav.navi:hover {
   padding-right: 0.5rem;
   color: white;
   text-shadow: 5px 5px 5px #FF0000;
-}
-.gt-logo {
-  font-family: "Matchup";
-  font-size: 4rem;
-  color: #7D02FF;
-  top: 0;
+  font-size: 1rem;
 }
 /* 3. article styling */
 .home-template {
@@ -255,6 +365,33 @@ nav.navi:hover {
 .gt-index-title {
   color: black !important;
 }
+/* Start Mixins */
+.BaseSubPage {
+  padding: 0.5rem 2rem;
+  background-color: #FFFFFF;
+  box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+  margin: 3rem auto 3rem auto;
+}
+.baseExt-relativ {
+  width: 49%;
+  background-color: #DEDEDE;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0.5%;
+  height: 100%;
+  position: relative;
+}
+.qv {
+  position: relative;
+  top: 0;
+  left: 0;
+  /* padding:0.5rem; */
+  float: left;
+  text-align: center;
+  margin-left: 38.2%;
+}
+/* End Mixins */
 .post-template {
   background-color: #DEDEDE;
   background-repeat: no-repeat;
@@ -289,7 +426,7 @@ nav.navi:hover {
   position: relative;
   height: 5rem;
   padding: 0;
-  /* width: %; */
+  width: 75%;
   background-color: transparent;
   box-shadow: none;
 }
@@ -299,16 +436,6 @@ nav.navi:hover {
 }
 .gt-post-img {
   width: 100%;
-}
-.baseExt-relativ {
-  width: 49%;
-  background-color: #DEDEDE;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0.5%;
-  height: 100%;
-  position: relative;
 }
 .prev-post {
   width: 49%;
@@ -332,21 +459,30 @@ nav.navi:hover {
   height: 100%;
   position: relative;
 }
-.qv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5rem;
-  text-align: center;
-  margin-left: 38.2%;
-}
 .gt-quick-view {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  padding: 0.5rem;
+  /* padding:0.5rem; */
+  float: left;
   text-align: center;
   margin-left: 38.2%;
+  margin: 0 auto;
+  position: absolute;
+  vertical-align: middle;
+}
+.gt-quick-view header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+  font-size: 0.5rem;
+}
+.gt-quick-view h6 {
+  text-align: center;
+  white-space: normal;
 }
 .gt-bg {
   height: 100%;
@@ -382,21 +518,21 @@ nav.navi:hover {
 }
 /* 6. animation */
 /* 7. meadia query */
-@media screen and (max-width: 480px) {
-  .navi {
-    display: none;
-  }
+/* @media screen and (max-width: 480px) {
+	.navi {display: none;}
 }
+
 @media screen and (min-width: 481px) and (max-width: 800px) {
-  .navi {
-    display: none;
-  }
-  .gt-post-header {
-    font-size: 2rem;
-  }
+	.navi {display: none;}
+	.gt-post-header {font-size: 2rem;}
 }
-@media only screen and (min-width: 801px) and (max-width: 1024px) {
-  .navi {
-    display: none;
-  }
+
+@media only screen and (min-width: 801px) and (max-width: 1024px){
+	.navi {display: none;}
 }
+
+@media only screen and (min-width: 1200px){
+	 //>=992的设备 
+}
+
+ */

@@ -1,0 +1,37 @@
+/* @import (reference)"../variables.less" */
+
+.basenavi {
+	background-color: @navi-bg-color;
+	box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
+
+	z-index: 999;
+
+
+}
+
+.baseli {list-style-type: none;padding:0.5rem;text-align: center;}
+
+.navi-left {
+	.basenavi;
+	float: left;
+	position: fixed;
+	top: 0;
+	
+	height: 100%;
+	width: @navi-width;
+	left: -@navi-movement;
+}
+
+.navi-extended {
+	.basenavi;
+}
+
+.navi-collapsed {
+	.basenavi;
+}
+
+.BaseLogo {
+	font-family: "Matchup";
+	color: #7D02FF;
+	top: 0;
+}

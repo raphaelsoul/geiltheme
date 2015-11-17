@@ -1,49 +1,133 @@
-@import "variables.less";
+@import (reference)"variables.less";
+@import (reference)"mixins/mixin-navigation.less";
 
-nav ul {
-	padding: 0;
-	margin: 0;
+
+
+@media screen and (max-width: 800px) {
+	nav.navi {
+		.navi-collapsed;
+		min-height: 1.8rem;
+		.gt-nav-tag {
+		}
+	}
+
+	nav.navi ul {
+		padding: 0;
+		margin: 0;
+		li {
+			.baseli;
+		}
+		li:hover {
+			.baseli;
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+			background-color: @naviElement-color;
+		}
+	}
+
+	.gt-logo {
+		.BaseLogo;
+		font-size: 1rem;
+		padding-left: 0.5rem;
+
+	}
 }
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+	@media (orientation:portrait) {
+		nav.navi {
+			.navi-collapsed;
+			min-height: 1.8rem;
+			.gt-nav-tag {
+			}
+		}
 
-.baseli {list-style-type: none;padding:0.5rem;text-align: center;}
-nav ul li a { text-decoration: none;color: black}
+		nav.navi ul {
+			padding: 0;
+			margin: 0;
+			li {
+				.baseli;
+			}
+			li:hover {
+				.baseli;
+				box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+				background-color: @naviElement-color;
+			}
+		}
 
-nav ul li {
-	.baseli;
+		.gt-logo {
+			.BaseLogo;
+			font-size: 1rem;
+			padding-left: 0.5rem;
+
+		}
+	}
+	@media (orientation:landscape) {
+		nav.navi {
+			.navi-left;
+			transition:all 0.5s ease-in-out;
+			-webkit-transition:all 0.5s ease-in-out;
+			-moz-transition:all 0.5s ease-in-out;
+			-o-transition:all 0.5s ease-in-out;
+		}
+
+		nav.navi:hover{
+			.navi-left;
+			transform:translateX(@navi-movement);
+			-webkit-transform:translateX(@navi-movement);
+			-moz-transform:translateX(@navi-movement);
+			-o-transform:translateX(@navi-movement);
+		}
+
+		nav.navi ul {
+			padding: 0;
+			margin: 0;
+			li {
+				.baseli;
+			}
+			li:hover {
+				.baseli;
+				box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+				background-color: @naviElement-color;
+			}
+		}
+		.gt-logo {
+			.BaseLogo;
+			font-size: 3rem;
+		}
+	}
 }
+@media screen and (min-width: 1200px) {
+	nav.navi {
+		.navi-left;
+		transition:all 0.5s ease-in-out;
+		-webkit-transition:all 0.5s ease-in-out;
+		-moz-transition:all 0.5s ease-in-out;
+		-o-transition:all 0.5s ease-in-out;
+	}
 
-nav ul li:hover {
-	.baseli;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-	background-color: @naviElement-color;
-}
+	nav.navi:hover{
+		.navi-left;
+		transform:translateX(@navi-movement);
+		-webkit-transform:translateX(@navi-movement);
+		-moz-transform:translateX(@navi-movement);
+		-o-transform:translateX(@navi-movement);
+	}
 
-.basenavi {
-	background-color: @navi-bg-color;
-	float: left;
-	position: fixed;
-	height: 100%;
-	width: @navi-width;
-	top: 0;
-	z-index: 999;
-}
-nav.navi {
-	.basenavi;
-	left: -@navi-movement;
-	box-shadow: 1rem 1rem 3rem rgba(35, 35, 35, 0.76);
-	transition:all 0.5s ease-in-out;
-	-webkit-transition:all 0.5s ease-in-out;
-	-moz-transition:all 0.5s ease-in-out;
-	-o-transition:all 0.5s ease-in-out;
-}
-
-nav.navi:hover{
-	.basenavi;
-	transform:translateX(@navi-movement);
-	-webkit-transform:translateX(@navi-movement);
-	-moz-transform:translateX(@navi-movement);
-	-o-transform:translateX(@navi-movement);
-	
+	nav.navi ul {
+		padding: 0;
+		margin: 0;
+		li {
+			.baseli;
+		}
+		li:hover {
+			.baseli;
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+			background-color: @naviElement-color;
+		}
+	}
+	.gt-logo {
+		.BaseLogo;
+		font-size: 3rem;
+	}
 }
 
 .gt-nav-tag {
@@ -54,11 +138,6 @@ nav.navi:hover{
 	padding-right:0.5rem;
 	color: white;
 	text-shadow: 5px 5px 5px #FF0000;
+	font-size:1rem;
 }
 
-.gt-logo {
-	font-family: "Matchup";
-	font-size: 4rem;
-	color: #7D02FF;
-	top: 0;
-}

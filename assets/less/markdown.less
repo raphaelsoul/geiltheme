@@ -1,10 +1,10 @@
-@import "variables.less";
+@import (reference)"variables.less";
 /* 标题 */
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	margin: 0;
 	margin: @title-margin 0;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 }
 
 h1 {font-size: @max-title;}
@@ -39,6 +39,7 @@ pre {
 	background: #fafafa;
 	border-radius: 3px;
 	white-space: pre;
+	text-indent:-0.5em;
 	margin: 0 0 1.75rem 0;
 }
 
@@ -53,10 +54,13 @@ pre {
 	background: @code-bg-color;
 	padding:0 0.3rem;
 	margin: 0 5px;
+	font-size: 1rem;
+	vertical-align: middle;
 }
 
 code {
 	.basecode;
+	text-indent: inherit;
 }
 
 pre>code {
